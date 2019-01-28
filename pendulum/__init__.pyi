@@ -4,16 +4,55 @@
 
 import datetime as _datetime
 from .__version__ import __version__
-from .constants import DAYS_PER_WEEK, FRIDAY, HOURS_PER_DAY, MINUTES_PER_HOUR, MONDAY, MONTHS_PER_YEAR, SATURDAY, SECONDS_PER_DAY, SECONDS_PER_HOUR, SECONDS_PER_MINUTE, SUNDAY, THURSDAY, TUESDAY, WEDNESDAY, WEEKS_PER_YEAR, YEARS_PER_CENTURY, YEARS_PER_DECADE
+from .constants import (
+    DAYS_PER_WEEK,
+    FRIDAY,
+    HOURS_PER_DAY,
+    MINUTES_PER_HOUR,
+    MONDAY,
+    MONTHS_PER_YEAR,
+    SATURDAY,
+    SECONDS_PER_DAY,
+    SECONDS_PER_HOUR,
+    SECONDS_PER_MINUTE,
+    SUNDAY,
+    THURSDAY,
+    TUESDAY,
+    WEDNESDAY,
+    WEEKS_PER_YEAR,
+    YEARS_PER_CENTURY,
+    YEARS_PER_DECADE,
+)
 from .date import Date
 from .datetime import DateTime
 from .duration import Duration
 from .formatting import Formatter
-from .helpers import format_diff, get_locale, get_test_now, has_test_now, locale, set_locale, set_test_now, test, week_ends_at, week_starts_at
+from .helpers import (
+    format_diff,
+    get_locale,
+    get_test_now,
+    has_test_now,
+    locale,
+    set_locale,
+    set_test_now,
+    test,
+    week_ends_at,
+    week_starts_at,
+)
 from .parser import parse
 from .period import Period
 from .time import Time
-from .tz import POST_TRANSITION, PRE_TRANSITION, TRANSITION_ERROR, UTC, local_timezone, set_local_timezone, test_local_timezone, timezone, timezones
+from .tz import (
+    POST_TRANSITION,
+    PRE_TRANSITION,
+    TRANSITION_ERROR,
+    UTC,
+    local_timezone,
+    set_local_timezone,
+    test_local_timezone,
+    timezone,
+    timezones,
+)
 from .tz.timezone import Timezone as _Timezone
 from .utils._compat import _HAS_FOLD
 from typing import Optional, Union
@@ -21,17 +60,61 @@ from typing import Optional, Union
 _WEEK_STARTS_AT = MONDAY
 _WEEK_ENDS_AT = SUNDAY
 
-def datetime(year: int, month: int, day: int, hour: int=..., minute: int=..., second: int=..., microsecond: int=..., tz: Optional[Union[str, float, _Timezone]]=..., dst_rule: str=...) -> DateTime: ...
-def local(year: int, month: int, day: int, hour: int=..., minute: int=..., second: int=..., microsecond: int=...) -> DateTime: ...
-def naive(year: int, month: int, day: int, hour: int=..., minute: int=..., second: int=..., microsecond: int=...) -> DateTime: ...
+def datetime(
+    year: int,
+    month: int,
+    day: int,
+    hour: int = ...,
+    minute: int = ...,
+    second: int = ...,
+    microsecond: int = ...,
+    tz: Optional[Union[str, float, _Timezone]] = ...,
+    dst_rule: str = ...,
+) -> DateTime: ...
+def local(
+    year: int,
+    month: int,
+    day: int,
+    hour: int = ...,
+    minute: int = ...,
+    second: int = ...,
+    microsecond: int = ...,
+) -> DateTime: ...
+def naive(
+    year: int,
+    month: int,
+    day: int,
+    hour: int = ...,
+    minute: int = ...,
+    second: int = ...,
+    microsecond: int = ...,
+) -> DateTime: ...
 def date(year: int, month: int, day: int) -> Date: ...
-def time(hour: int, minute: int=..., second: int=..., microsecond: int=...) -> Time: ...
-def instance(dt: _datetime.datetime, tz: Optional[Union[str, _Timezone]]=...) -> DateTime: ...
-def now(tz: Optional[Union[str, _Timezone]]=...) -> DateTime: ...
-def today(tz: Union[str, _Timezone]=...) -> DateTime: ...
-def tomorrow(tz: Union[str, _Timezone]=...) -> DateTime: ...
-def yesterday(tz: Union[str, _Timezone]=...) -> DateTime: ...
-def from_format(string: str, fmt: str, tz: Union[str, _Timezone]=..., locale: Optional[str]=...) -> DateTime: ...
-def from_timestamp(timestamp: Union[int, float], tz: Union[str, _Timezone]=...) -> DateTime: ...
-def duration(days: float=..., seconds: float=..., microseconds: float=..., milliseconds: float=..., minutes: float=..., hours: float=..., weeks: float=..., years: float=..., months: float=...) -> Duration: ...
-def period(start: DateTime, end: DateTime, absolute: bool=...) -> Period: ...
+def time(
+    hour: int, minute: int = ..., second: int = ..., microsecond: int = ...
+) -> Time: ...
+def instance(
+    dt: _datetime.datetime, tz: Optional[Union[str, _Timezone]] = ...
+) -> DateTime: ...
+def now(tz: Optional[Union[str, _Timezone]] = ...) -> DateTime: ...
+def today(tz: Union[str, _Timezone] = ...) -> DateTime: ...
+def tomorrow(tz: Union[str, _Timezone] = ...) -> DateTime: ...
+def yesterday(tz: Union[str, _Timezone] = ...) -> DateTime: ...
+def from_format(
+    string: str, fmt: str, tz: Union[str, _Timezone] = ..., locale: Optional[str] = ...
+) -> DateTime: ...
+def from_timestamp(
+    timestamp: Union[int, float], tz: Union[str, _Timezone] = ...
+) -> DateTime: ...
+def duration(
+    days: float = ...,
+    seconds: float = ...,
+    microseconds: float = ...,
+    milliseconds: float = ...,
+    minutes: float = ...,
+    hours: float = ...,
+    weeks: float = ...,
+    years: float = ...,
+    months: float = ...,
+) -> Duration: ...
+def period(start: DateTime, end: DateTime, absolute: bool = ...) -> Period: ...

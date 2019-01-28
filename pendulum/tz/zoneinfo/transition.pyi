@@ -7,7 +7,9 @@ from datetime import timedelta
 from typing import Optional
 
 class Transition:
-    def __init__(self, at: int, ttype: TransitionType, previous: Optional[Transition]) -> None: ...
+    def __init__(
+        self, at: int, ttype: TransitionType, previous: Optional[Transition]
+    ) -> None: ...
     @property
     def at(self) -> int: ...
     @property

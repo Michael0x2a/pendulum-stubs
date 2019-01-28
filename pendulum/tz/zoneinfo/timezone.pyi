@@ -8,7 +8,12 @@ from .transition_type import TransitionType
 from typing import List, Optional
 
 class Timezone:
-    def __init__(self, transitions: List[Transition], posix_rule: Optional[PosixTimezone]=..., extended: bool=...) -> None: ...
+    def __init__(
+        self,
+        transitions: List[Transition],
+        posix_rule: Optional[PosixTimezone] = ...,
+        extended: bool = ...,
+    ) -> None: ...
     @property
     def transitions(self) -> List[Transition]: ...
     @property

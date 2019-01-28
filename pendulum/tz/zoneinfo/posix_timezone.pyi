@@ -36,7 +36,15 @@ class MPosixTransition(PosixTransition):
     def trans_offset(self, is_leap: bool, jan1_weekday: int) -> int: ...
 
 class PosixTimezone:
-    def __init__(self, std_abbr: str, std_offset: int, dst_abbr: Optional[str], dst_offset: Optional[int], dst_start: Optional[PosixTransition]=..., dst_end: Optional[PosixTransition]=...) -> None: ...
+    def __init__(
+        self,
+        std_abbr: str,
+        std_offset: int,
+        dst_abbr: Optional[str],
+        dst_offset: Optional[int],
+        dst_start: Optional[PosixTransition] = ...,
+        dst_end: Optional[PosixTransition] = ...,
+    ) -> None: ...
     @property
     def std_abbr(self) -> str: ...
     @property

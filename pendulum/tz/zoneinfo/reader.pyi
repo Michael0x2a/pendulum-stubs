@@ -9,11 +9,13 @@ from .transition import Transition
 from .transition_type import TransitionType
 from collections import namedtuple
 
-_offset = namedtuple('offset', 'utc_total_offset is_dst abbr_idx')
+_offset = namedtuple("offset", "utc_total_offset is_dst abbr_idx")
 
-header = namedtuple('header', 'version utclocals stdwalls leaps transitions types abbr_size')
+header = namedtuple(
+    "header", "version utclocals stdwalls leaps transitions types abbr_size"
+)
 
 class Reader:
-    def __init__(self, extend: bool=...) -> None: ...
+    def __init__(self, extend: bool = ...) -> None: ...
     def read_for(self, timezone: str) -> Timezone: ...
     def read(self, file_path: str) -> Timezone: ...

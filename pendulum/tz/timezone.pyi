@@ -12,14 +12,23 @@ POST_TRANSITION: str
 PRE_TRANSITION: str
 TRANSITION_ERROR: str
 _datetime = datetime
-_D = TypeVar('_D', bound=datetime)
+_D = TypeVar("_D", bound=datetime)
 
 class Timezone(tzinfo):
-    def __init__(self, name: str, extended: bool=...) -> None: ...
+    def __init__(self, name: str, extended: bool = ...) -> None: ...
     @property
     def name(self) -> str: ...
-    def convert(self, dt: _D, dst_rule: Optional[str]=...) -> _D: ...
-    def datetime(self, year: int, month: int, day: int, hour: int=..., minute: int=..., second: int=..., microsecond: int=...) -> _datetime: ...
+    def convert(self, dt: _D, dst_rule: Optional[str] = ...) -> _D: ...
+    def datetime(
+        self,
+        year: int,
+        month: int,
+        day: int,
+        hour: int = ...,
+        minute: int = ...,
+        second: int = ...,
+        microsecond: int = ...,
+    ) -> _datetime: ...
     @overload
     def utcoffset(self, dt: None) -> None: ...
     @overload
