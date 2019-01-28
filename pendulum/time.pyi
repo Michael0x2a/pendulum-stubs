@@ -37,14 +37,14 @@ class Time(FormattableMixing, time):
         absolute: bool = ...,
         locale: Optional[Any] = ...,
     ): ...
-    def replace(
+    def replace(  # type: ignore
         self,
         hour: Optional[Any] = ...,
         minute: Optional[Any] = ...,
         second: Optional[Any] = ...,
         microsecond: Optional[Any] = ...,
         tzinfo: bool = ...,
-    ): ...  # type: ignore
+    ): ...
     def __getnewargs__(self): ...
     def __reduce__(self): ...
     def __reduce_ex__(self, protocol: Any): ...

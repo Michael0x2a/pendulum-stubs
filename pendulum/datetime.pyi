@@ -49,9 +49,9 @@ class DateTime(datetime.datetime, Date):  # type: ignore
         fold: int = ...,
     ): ...
     @classmethod
-    def now(
+    def now(  # type: ignore
         cls: Any, tz: Optional[Union[str, Timezone]] = ...
-    ) -> DateTime: ...  # type: ignore
+    ) -> DateTime: ...
     @classmethod
     def utcnow(cls: Any) -> DateTime: ...
     @classmethod
@@ -172,7 +172,7 @@ class DateTime(datetime.datetime, Date):  # type: ignore
     @classmethod
     def combine(cls, date: Any, time: Any): ...  # type: ignore
     def astimezone(self, tz: Optional[Any] = ...): ...
-    def replace(
+    def replace(  # type: ignore
         self,
         year: Optional[Any] = ...,
         month: Optional[Any] = ...,
@@ -183,7 +183,7 @@ class DateTime(datetime.datetime, Date):  # type: ignore
         microsecond: Optional[Any] = ...,
         tzinfo: bool = ...,
         fold: Optional[Any] = ...,
-    ): ...  # type: ignore
+    ): ...
     def __getnewargs__(self): ...
     def __reduce__(self): ...
     def __reduce_ex__(self, protocol: Any): ...
