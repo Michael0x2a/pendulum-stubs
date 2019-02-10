@@ -53,4 +53,4 @@ class FixedTimezone(Timezone):
 class TimezoneFile(Timezone):
     def __init__(self, path: Any) -> None: ...
 
-UTC: Any
+UTC: FixedTimezone
